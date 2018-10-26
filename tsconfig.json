@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["es2015", "es2017", "dom", "esnext.asynciterable"],
+    "outDir": "dist",
+    "allowJs": true,
+    "jsx": "react",
+    //"checkJs": true,
+    //    "rootDir": ".",
+    //    "composite": true,
+    //    "removeComments": true,
+    //    "downlevelIteration": true,
+    //    "strict": true,
+    //    "noUnusedLocals": true,
+    //    "noUnusedParameters": true,
+    //    "noImplicitReturns": true,
+    //    "moduleResolution": "node",
+    //    "baseUrl": "./",
+    //    "esModuleInterop": true,
+    //    "sourceRoot": "./",
+    //    "mapRoot": "./"
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Radiant Admin Console</title>
+  <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <style>
+    .container {
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" />
+
+  <!-- App.js will be injected here by webpack -->
+  <script>
+
+
+    AccountKit_OnInteractive = function () {
+      AccountKit.init(
+        {
+          appId: "842830269247201",
+          state: "7c29e4122848bb5a30b451d4bbc93ee3",
+          version: "v1.1",
+          fbAppEventsEnabled: true,
+          redirect: "http://localhost:3000/community"
+        }
+      );
+    };
+
+  </script>
+
+</body>
+
+</html>

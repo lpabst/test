@@ -1,0 +1,39 @@
+service: "radiant-admin-console"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  timeout: 60
+  region: us-west-2
+  stage: ${opt:stage, 'dev'}
+  profile: radiant
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/*"
+
+functions:
+  admin_console:
+    handler: handler.app
+    environment:
+      STAGE: ${self:provider.stage}
+    events:
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /{resource}
+          method: get
+      - http:
+          path: /client/{resource}
+          method: get
+      - http:
+          path: /login
+          method: get
+      - http:
+          path: /community
+          method: get
+plugins:
+  - serverless-webpack
+  - serverless-offline
